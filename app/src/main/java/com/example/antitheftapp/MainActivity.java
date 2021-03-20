@@ -45,4 +45,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 10));
     }
+
+    // 일정 거리 이상 넘어가면 알람 울리도록
+    public void AlramAtExcess() {
+
+    }
+
+    //디바이스의 위치정보 가져오기
+    public void GetDeviceLocation() {
+
+    }
 }
