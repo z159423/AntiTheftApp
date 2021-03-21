@@ -4,48 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout_main"
     tools:context=".MainActivity">
 
-    <fragment
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="디바이스와의 거리 : "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            tools:context=".MapsActivity" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="경도 : "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="위도 : "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+            <TextView
+                android:id="@+id/ThisLat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재 위도 : " />
+
+            <TextView
+                android:id="@+id/ThisLng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재 경도 : " />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:id="@+id/DeviceLat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디바이스 위도 : " />
+
+            <TextView
+                android:id="@+id/DeviceLng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디바이스 경도 : " />
+
+            <TextView
+                android:id="@+id/dstWithDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디바이스와의 거리 : " />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/UC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="업데이트 카운트 : " />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
