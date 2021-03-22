@@ -259,7 +259,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 currentPosition
                         = new LatLng(location.getLatitude(), location.getLongitude());
 
-
                 String markerTitle = getCurrentAddress(currentPosition);
                 String markerSnippet = "위도:" + String.valueOf(location.getLatitude())
                         + " 경도:" + String.valueOf(location.getLongitude());
@@ -294,8 +293,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Manifest.permission.ACCESS_FINE_LOCATION);
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION);
-
-
 
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED &&
                 hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED   ) {
@@ -336,7 +333,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         List<Address> addresses;
 
         try {
-
             addresses = geocoder.getFromLocation(
                     latlng.latitude,
                     latlng.longitude,
@@ -368,9 +364,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (currentMarker != null) currentMarker.remove();
 
-
-
-
         LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
 
         MarkerOptions markerOptions = new MarkerOptions();
@@ -380,6 +373,56 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         markerOptions.draggable(true);
 
         currentMarker = mMap.addMarker(markerOptions);
+
+        //=============================================================
+
+        LatLng currentLatLng2 = new LatLng(location.getLatitude() + 0.003f, location.getLongitude() + 0.003f);
+
+        MarkerOptions markerOptions2 = new MarkerOptions();
+        markerOptions2.position(currentLatLng2);
+        markerOptions2.title(markerTitle);
+        markerOptions2.snippet(markerSnippet);
+        markerOptions2.draggable(true);
+
+        mMap.addMarker(markerOptions2);
+
+        //================================================================
+
+        LatLng currentLatLng3 = new LatLng(location.getLatitude() + 0.005f, location.getLongitude() + 0.003f);
+
+        MarkerOptions markerOptions3 = new MarkerOptions();
+        markerOptions3.position(currentLatLng3);
+        markerOptions3.title(markerTitle);
+        markerOptions3.snippet(markerSnippet);
+        markerOptions3.draggable(true);
+
+        mMap.addMarker(markerOptions3);
+
+        //================================================================
+
+        LatLng currentLatLng4 = new LatLng(location.getLatitude() + 0.007f, location.getLongitude());
+
+        MarkerOptions markerOptions4 = new MarkerOptions();
+        markerOptions4.position(currentLatLng4);
+        markerOptions4.title(markerTitle);
+        markerOptions4.snippet(markerSnippet);
+        markerOptions4.draggable(true);
+
+        mMap.addMarker(markerOptions4);
+
+        //================================================================
+
+        LatLng currentLatLng5 = new LatLng(location.getLatitude() + 0.003f, location.getLongitude() - 0.003f);
+
+        MarkerOptions markerOptions5 = new MarkerOptions();
+        markerOptions5.position(currentLatLng5);
+        markerOptions5.title(markerTitle);
+        markerOptions5.snippet(markerSnippet);
+        markerOptions5.draggable(true);
+
+        mMap.addMarker(markerOptions5);
+
+        //================================================================
 
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
         mMap.moveCamera(cameraUpdate);
